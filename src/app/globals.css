@@ -10,7 +10,8 @@
   }
   
   body {
-    @apply bg-gray-900 text-white font-sans overflow-x-hidden;
+    @apply bg-black text-white font-sans overflow-x-hidden;
+    background: linear-gradient(135deg, #000000 0%, #0f172a 50%, #000000 100%);
   }
 
   ::-webkit-scrollbar {
@@ -40,7 +41,7 @@
   }
 
   .gradient-text {
-    @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-cyan-400 via-primary-400 to-purple-400 bg-clip-text text-transparent;
   }
 
   .card-hover {
@@ -48,15 +49,18 @@
   }
 
   .glass-effect {
-    @apply bg-white/5 backdrop-blur-md border border-white/10;
+    @apply bg-white/5 backdrop-blur-xl border border-cyan-500/20;
+    box-shadow: 0 8px 32px 0 rgba(6, 182, 212, 0.1);
   }
 
   .btn-primary {
-    @apply inline-flex items-center px-6 py-3 border border-transparent text-base font-medium rounded-full text-white bg-gradient-to-r from-primary-500 to-secondary-500 hover:from-primary-600 hover:to-secondary-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200;
+    @apply inline-flex items-center px-8 py-4 border border-transparent text-base font-semibold rounded-full text-white bg-gradient-to-r from-cyan-500 to-primary-500 hover:from-cyan-400 hover:to-primary-400 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-500 transition-all duration-200 transform hover:scale-105;
+    box-shadow: 0 20px 40px rgba(6, 182, 212, 0.3), 0 0 30px rgba(6, 182, 212, 0.2);
   }
 
   .btn-outline {
-    @apply inline-flex items-center px-6 py-3 border border-primary-500 text-primary-500 text-base font-medium rounded-full hover:bg-primary-500 hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary-500 transition-all duration-200;
+    @apply inline-flex items-center px-8 py-4 border-2 border-cyan-400 text-cyan-400 text-base font-semibold rounded-full hover:bg-cyan-400 hover:text-black focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-cyan-400 transition-all duration-200 transform hover:scale-105;
+    box-shadow: 0 0 20px rgba(34, 211, 238, 0.3);
   }
 }
 
