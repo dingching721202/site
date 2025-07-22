@@ -48,8 +48,8 @@ const Footer = () => {
                 fontSize: '14px',
                 transition: 'color 0.2s ease'
               }}
-              onMouseOver={(e) => e.target.style.color = '#ffffff'}
-              onMouseOut={(e) => e.target.style.color = '#cccccc'}
+              onMouseOver={(e) => (e.target as HTMLElement).style.color = '#ffffff'}
+              onMouseOut={(e) => (e.target as HTMLElement).style.color = '#cccccc'}
             >
               聯繫我們
             </a>
@@ -94,14 +94,16 @@ const Footer = () => {
               zIndex: 1000
             }}
             onMouseOver={(e) => {
-              e.target.style.background = '#222222';
-              e.target.style.color = '#ffffff';
-              e.target.style.transform = 'translateY(-2px)';
+              const target = e.target as HTMLElement;
+              target.style.background = '#222222';
+              target.style.color = '#ffffff';
+              target.style.transform = 'translateY(-2px)';
             }}
             onMouseOut={(e) => {
-              e.target.style.background = '#111111';
-              e.target.style.color = '#cccccc';
-              e.target.style.transform = 'translateY(0)';
+              const target = e.target as HTMLElement;
+              target.style.background = '#111111';
+              target.style.color = '#cccccc';
+              target.style.transform = 'translateY(0)';
             }}
             title="回到頂部"
           >
