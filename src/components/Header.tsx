@@ -41,8 +41,8 @@ const Header = () => {
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-black/95 backdrop-blur-md border-b border-white/10' 
-          : 'bg-black/90 backdrop-blur-sm'
+          ? 'bg-gray-900/95 backdrop-blur-md border-b border-white/10' 
+          : 'bg-gray-900/90 backdrop-blur-sm'
       }`}
     >
       <nav className="section-container">
@@ -97,7 +97,7 @@ const Header = () => {
 
         {/* Mobile Menu */}
         <div
-          className={`lg:hidden absolute top-full left-0 right-0 bg-black/95 backdrop-blur-md border-b border-white/10 transition-all duration-300 ${
+          className={`lg:hidden absolute top-full left-0 right-0 bg-gray-900/95 backdrop-blur-md border-b border-white/10 transition-all duration-300 ${
             isMobileMenuOpen 
               ? 'opacity-100 visible translate-y-0' 
               : 'opacity-0 invisible -translate-y-4'

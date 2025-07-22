@@ -30,7 +30,7 @@ const Testing = () => {
     <section 
       id="testing" 
       ref={sectionRef}
-      className="section-padding bg-gradient-to-b from-gray-900 to-black"
+      className="section-padding bg-gradient-to-b from-gray-900 to-gray-800"
     >
       <div className="section-container">
         {/* Section Header */}
@@ -106,7 +106,7 @@ const Testing = () => {
 
             {/* Process Steps */}
             <div className="space-y-4 mb-8">
-              <div className="flex items-center gap-4 p-4 bg-black/20 rounded-xl">
+              <div className="flex items-center gap-4 p-4 bg-gray-800/20 rounded-xl">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                   1
                 </div>
@@ -115,7 +115,7 @@ const Testing = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-black/20 rounded-xl">
+              <div className="flex items-center gap-4 p-4 bg-gray-800/20 rounded-xl">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                   2
                 </div>
@@ -124,7 +124,7 @@ const Testing = () => {
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-black/20 rounded-xl">
+              <div className="flex items-center gap-4 p-4 bg-gray-800/20 rounded-xl">
                 <div className="flex-shrink-0 w-8 h-8 bg-gradient-to-br from-primary-500 to-secondary-500 rounded-full flex items-center justify-center text-white text-sm font-bold">
                   3
                 </div>

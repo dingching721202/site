@@ -5,7 +5,7 @@ import { learningPlans } from '@/lib/data';
 
 const LearningPlans = () => {
   const [visibleItems, setVisibleItems] = useState<Set<number>>(new Set());
-  const sectionRef = useRef<HTMLSection>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -88,28 +88,28 @@ const LearningPlans = () => {
 
                 {/* Stats Grid */}
                 <div className="grid grid-cols-2 gap-4 mb-8">
-                  <div className="text-center p-4 bg-black/20 rounded-2xl">
+                  <div className="text-center p-4 bg-gray-800/20 rounded-2xl">
                     <div className="text-3xl font-bold gradient-text">
                       {plan.stats.courses}
                     </div>
                     <div className="text-sm text-gray-400 mt-1">學習課數</div>
                   </div>
                   
-                  <div className="text-center p-4 bg-black/20 rounded-2xl">
+                  <div className="text-center p-4 bg-gray-800/20 rounded-2xl">
                     <div className="text-3xl font-bold gradient-text">
                       {plan.stats.units}
                     </div>
                     <div className="text-sm text-gray-400 mt-1">總單元數</div>
                   </div>
                   
-                  <div className="text-center p-4 bg-black/20 rounded-2xl">
+                  <div className="text-center p-4 bg-gray-800/20 rounded-2xl">
                     <div className="text-3xl font-bold gradient-text">
                       {plan.stats.studyHours}
                     </div>
                     <div className="text-sm text-gray-400 mt-1">建議自學時數</div>
                   </div>
                   
-                  <div className="text-center p-4 bg-black/20 rounded-2xl">
+                  <div className="text-center p-4 bg-gray-800/20 rounded-2xl">
                     <div className="text-3xl font-bold gradient-text">
                       {plan.stats.vocabulary}
                     </div>

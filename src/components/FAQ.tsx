@@ -43,7 +43,7 @@ const FAQ = () => {
     <section 
       id="faq" 
       ref={sectionRef}
-      className="section-padding bg-gradient-to-b from-black to-gray-900"
+      className="section-padding bg-gradient-to-b from-gray-900 to-gray-800"
     >
       <div className="section-container">
         {/* Section Header */}
