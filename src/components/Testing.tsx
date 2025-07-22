@@ -1,10 +1,10 @@
 'use client';
 
-import { testOptions, timeline } from '@/lib/data';
+import { testOptions, courselevels } from '@/lib/data';
 
 const Testing = () => {
   return (
-    <section id="testing" className="section-padding" style={{ background: '#000000' }}>
+    <section id="testing" className="section-padding">
       <div className="container">
         <h2 className="section-title">前測與後測</h2>
         <p className="section-subtitle">
@@ -33,7 +33,8 @@ const Testing = () => {
                   key={index} 
                   style={{ 
                     padding: '20px', 
-                    background: '#0a0a0a', 
+                    background: 'rgba(255, 255, 255, 0.05)',
+                    backdropFilter: 'blur(10px)', 
                     borderRadius: '8px', 
                     marginBottom: '16px' 
                   }}
@@ -91,7 +92,8 @@ const Testing = () => {
                 alignItems: 'center', 
                 gap: '16px', 
                 padding: '16px', 
-                background: '#0a0a0a', 
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)', 
                 borderRadius: '8px',
                 marginBottom: '12px'
               }}>
@@ -119,7 +121,8 @@ const Testing = () => {
                 alignItems: 'center', 
                 gap: '16px', 
                 padding: '16px', 
-                background: '#0a0a0a', 
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)', 
                 borderRadius: '8px',
                 marginBottom: '12px'
               }}>
@@ -147,7 +150,8 @@ const Testing = () => {
                 alignItems: 'center', 
                 gap: '16px', 
                 padding: '16px', 
-                background: '#0a0a0a', 
+                background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)', 
                 borderRadius: '8px'
               }}>
                 <div style={{ 
@@ -199,7 +203,8 @@ const Testing = () => {
           }}>
             <div style={{ 
               padding: '24px', 
-              background: '#0a0a0a', 
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)', 
               borderRadius: '12px',
               textAlign: 'center'
             }}>
@@ -224,7 +229,8 @@ const Testing = () => {
             
             <div style={{ 
               padding: '24px', 
-              background: '#0a0a0a', 
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)', 
               borderRadius: '12px',
               textAlign: 'center'
             }}>
@@ -249,7 +255,8 @@ const Testing = () => {
             
             <div style={{ 
               padding: '24px', 
-              background: '#0a0a0a', 
+              background: 'rgba(255, 255, 255, 0.05)',
+              backdropFilter: 'blur(10px)', 
               borderRadius: '12px',
               textAlign: 'center'
             }}>
@@ -275,62 +282,82 @@ const Testing = () => {
         </div>
 
         <div className="card">
-          <h3 className="feature-title" style={{ textAlign: 'center' }}>課程影片與進度總表</h3>
+          <h3 className="feature-title" style={{ textAlign: 'center' }}>課程影片程度說明及適用對象</h3>
           
-          <div style={{ maxWidth: '600px', margin: '32px auto 0' }}>
-            {timeline.map((item, index) => (
+          <div style={{ maxWidth: '700px', margin: '32px auto 0' }}>
+            {courselevels.map((item, index) => (
               <div 
                 key={item.id} 
                 style={{ 
-                  display: 'flex', 
-                  alignItems: 'flex-start', 
-                  gap: '24px', 
-                  marginBottom: '32px' 
+                  padding: '24px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                backdropFilter: 'blur(10px)',
+                  borderRadius: '12px',
+                  marginBottom: '24px',
+                  border: item.status === 'completed' ? '1px solid #3b82f6' : '1px solid #333333'
                 }}
               >
                 <div style={{ 
-                  width: '32px', 
-                  height: '32px', 
-                  borderRadius: '50%', 
-                  background: item.status === 'completed' ? '#3b82f6' : '#333333', 
                   display: 'flex', 
                   alignItems: 'center', 
-                  justifyContent: 'center',
-                  marginTop: '4px'
+                  gap: '16px', 
+                  marginBottom: '16px' 
                 }}>
-                  {item.status === 'completed' ? (
-                    <span style={{ color: 'white', fontSize: '16px' }}>✓</span>
-                  ) : (
-                    <span style={{ color: '#666666', fontSize: '16px' }}>•</span>
-                  )}
-                </div>
-                
-                <div style={{ flex: 1 }}>
                   <div style={{ 
-                    color: item.status === 'completed' ? '#3b82f6' : '#888888', 
-                    fontSize: '14px', 
+                    padding: '8px 16px',
+                    background: item.status === 'completed' ? '#3b82f6' : '#333333',
+                    borderRadius: '20px',
+                    fontSize: '14px',
                     fontWeight: '600',
-                    marginBottom: '4px'
+                    color: '#ffffff'
                   }}>
                     {item.date}
                   </div>
-                  <h4 style={{ 
-                    color: '#ffffff', 
-                    fontSize: '18px', 
-                    fontWeight: '600', 
-                    marginBottom: '8px' 
-                  }}>
-                    {item.title}
-                  </h4>
-                  <p style={{ 
-                    color: '#cccccc', 
-                    fontSize: '14px', 
-                    lineHeight: '1.6', 
-                    margin: 0 
-                  }}>
-                    {item.description}
-                  </p>
+                  
+                  {item.status === 'completed' && (
+                    <div style={{ 
+                      padding: '4px 12px',
+                      background: '#065f46',
+                      borderRadius: '12px',
+                      fontSize: '12px',
+                      fontWeight: '600',
+                      color: '#10b981'
+                    }}>
+                      現已開放
+                    </div>
+                  )}
+                  
+                  {item.status === 'upcoming' && (
+                    <div style={{ 
+                      padding: '4px 12px',
+                      background: '#7c2d12',
+                      borderRadius: '12px',
+                      fontSize: '12px',
+                      fontWeight: '600',
+                      color: '#f97316'
+                    }}>
+                      即將推出
+                    </div>
+                  )}
                 </div>
+                
+                <h4 style={{ 
+                  color: '#ffffff', 
+                  fontSize: '20px', 
+                  fontWeight: '700', 
+                  marginBottom: '12px' 
+                }}>
+                  {item.title}
+                </h4>
+                
+                <p style={{ 
+                  color: '#cccccc', 
+                  fontSize: '15px', 
+                  lineHeight: '1.6', 
+                  margin: 0 
+                }}>
+                  {item.description}
+                </p>
               </div>
             ))}
           </div>

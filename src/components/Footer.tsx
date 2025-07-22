@@ -3,8 +3,9 @@
 const Footer = () => {
   return (
     <footer style={{ 
-      background: '#000000', 
-      borderTop: '1px solid #222222', 
+      background: 'rgba(0, 0, 0, 0.3)', 
+      backdropFilter: 'blur(10px)',
+      borderTop: '1px solid rgba(255, 255, 255, 0.1)', 
       padding: '48px 0' 
     }}>
       <div className="container">
@@ -81,7 +82,8 @@ const Footer = () => {
               right: '32px',
               width: '48px',
               height: '48px',
-              background: '#111111',
+              background: 'rgba(255, 255, 255, 0.1)',
+              backdropFilter: 'blur(10px)',
               border: '1px solid #333333',
               borderRadius: '50%',
               color: '#cccccc',
@@ -95,13 +97,13 @@ const Footer = () => {
             }}
             onMouseOver={(e) => {
               const target = e.target as HTMLElement;
-              target.style.background = '#222222';
+              target.style.background = 'rgba(255, 255, 255, 0.2)';
               target.style.color = '#ffffff';
               target.style.transform = 'translateY(-2px)';
             }}
             onMouseOut={(e) => {
               const target = e.target as HTMLElement;
-              target.style.background = '#111111';
+              target.style.background = 'rgba(255, 255, 255, 0.1)';
               target.style.color = '#cccccc';
               target.style.transform = 'translateY(0)';
             }}

@@ -1,14 +1,14 @@
 'use client';
 
-import { learningPlans } from '@/lib/data';
+import { membershipPlans } from '@/lib/data';
 
 const LearningPlans = () => {
   return (
-    <section id="plans" className="section-padding" style={{ background: '#000000' }}>
+    <section id="plans" className="section-padding">
       <div className="container">
-        <h2 className="section-title">三個月學習建議方案</h2>
+        <h2 className="section-title">會員方案</h2>
         <p className="section-subtitle">
-          選擇最適合您程度和學習節奏的方案
+          選擇最適合您的學習方案，立即開始華語學習之旅
         </p>
 
         <div style={{ 
@@ -16,7 +16,7 @@ const LearningPlans = () => {
           gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', 
           gap: '32px' 
         }}>
-          {learningPlans.map((plan) => (
+          {membershipPlans.map((plan) => (
             <div 
               key={plan.id} 
               className={`plan-card ${plan.featured ? 'featured' : ''}`}
@@ -29,7 +29,41 @@ const LearningPlans = () => {
 
               <h3 className="plan-title">{plan.title}</h3>
               
-              {!plan.featured && (
+              {plan.price && (
+                <div style={{ 
+                  textAlign: 'center',
+                  marginBottom: '24px',
+                  padding: '20px',
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)',
+                  borderRadius: '8px'
+                }}>
+                  <div style={{ 
+                    fontSize: '14px', 
+                    color: '#888888',
+                    textDecoration: 'line-through',
+                    marginBottom: '8px'
+                  }}>
+                    原價 {plan.price.currency}{plan.price.original.toLocaleString()}
+                  </div>
+                  <div style={{ 
+                    fontSize: '32px', 
+                    fontWeight: '700',
+                    color: '#3b82f6',
+                    marginBottom: '4px'
+                  }}>
+                    {plan.price.currency}{plan.price.discounted.toLocaleString()}
+                  </div>
+                  <div style={{ 
+                    fontSize: '14px', 
+                    color: '#cccccc'
+                  }}>
+                    省下 {plan.price.currency}{(plan.price.original - plan.price.discounted).toLocaleString()}
+                  </div>
+                </div>
+              )}
+              
+              {!plan.featured && !plan.price && (
                 <div className="plan-price">{plan.badge}</div>
               )}
 
@@ -55,7 +89,8 @@ const LearningPlans = () => {
               <div style={{ marginTop: '32px', marginBottom: '32px' }}>
                 <div style={{ 
                   padding: '16px', 
-                  background: '#0a0a0a', 
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)', 
                   borderRadius: '8px', 
                   marginBottom: '16px' 
                 }}>
@@ -64,7 +99,8 @@ const LearningPlans = () => {
                 </div>
                 <div style={{ 
                   padding: '16px', 
-                  background: '#0a0a0a', 
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)', 
                   borderRadius: '8px', 
                   marginBottom: '16px' 
                 }}>
@@ -73,7 +109,8 @@ const LearningPlans = () => {
                 </div>
                 <div style={{ 
                   padding: '16px', 
-                  background: '#0a0a0a', 
+                  background: 'rgba(255, 255, 255, 0.05)',
+                  backdropFilter: 'blur(10px)', 
                   borderRadius: '8px' 
                 }}>
                   <strong style={{ color: '#ffffff', fontSize: '14px' }}>真人團班：</strong>
@@ -120,6 +157,35 @@ const LearningPlans = () => {
                   </p>
                 </div>
               </div>
+
+              <div style={{ marginTop: '32px' }}>
+                <button 
+                  className="btn btn-primary"
+                  style={{ 
+                    width: '100%',
+                    fontSize: '16px',
+                    fontWeight: '600',
+                    padding: '16px 24px'
+                  }}
+                  onClick={() => {
+                    // 這裡可以整合付款系統
+                    alert(`選擇了 ${plan.title}，即將跳轉到付款頁面`);
+                  }}
+                >
+                  立即購買 {plan.title}
+                </button>
+                
+                {plan.price && (
+                  <div style={{ 
+                    textAlign: 'center',
+                    marginTop: '12px',
+                    fontSize: '12px',
+                    color: '#666666'
+                  }}>
+                    支援信用卡、ATM轉帳等多種付款方式
+                  </div>
+                )}
+              </div>
             </div>
           ))}
         </div>
@@ -131,26 +197,50 @@ const LearningPlans = () => {
             marginBottom: '16px', 
             color: '#ffffff' 
           }}>
-            準備開始您的華語學習之旅？
+            還在猶豫嗎？
           </h3>
           <p style={{ 
             fontSize: '16px', 
             color: '#cccccc', 
             marginBottom: '32px' 
           }}>
-            選擇最適合的學習方案，搭配我們的測驗系統找到最佳起點
+            立即購買會員方案，開始您的華語學習之旅。如有任何問題，歡迎聯繫我們
           </p>
-          <button 
-            className="btn btn-primary"
-            onClick={() => {
-              const element = document.querySelector('#testing');
-              if (element) {
-                element.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-            }}
-          >
-            了解測驗系統
-          </button>
+          
+          <div style={{ 
+            display: 'flex', 
+            gap: '16px', 
+            justifyContent: 'center',
+            flexWrap: 'wrap'
+          }}>
+            <button 
+              className="btn btn-primary"
+              onClick={() => {
+                const element = document.querySelector('#testing');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
+              了解測驗系統
+            </button>
+            
+            <a
+              href="mailto:contact@tli1956.com"
+              className="btn"
+              style={{ 
+                background: 'transparent',
+                border: '1px solid #3b82f6',
+                color: '#3b82f6',
+                textDecoration: 'none',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '8px'
+              }}
+            >
+              📧 聯繫客服
+            </a>
+          </div>
         </div>
       </div>
     </section>

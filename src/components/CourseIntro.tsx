@@ -4,7 +4,7 @@ import { features } from '@/lib/data';
 
 const CourseIntro = () => {
   return (
-    <section id="intro" className="section-padding" style={{ background: '#000000' }}>
+    <section id="intro" className="section-padding">
       <div className="container">
         <h2 className="section-title">課程簡介</h2>
         <p className="section-subtitle">

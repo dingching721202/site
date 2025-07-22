@@ -19,7 +19,7 @@ const FAQ = () => {
   };
 
   return (
-    <section id="faq" className="section-padding" style={{ background: '#000000' }}>
+    <section id="faq" className="section-padding">
       <div className="container">
         <h2 className="section-title">常見問題 FAQ</h2>
         <p className="section-subtitle">

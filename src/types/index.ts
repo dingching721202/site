@@ -3,11 +3,16 @@ export interface LearningPlan {
   title: string;
   badge: string;
   featured?: boolean;
+  price?: {
+    original: number;
+    discounted: number;
+    currency: string;
+  };
   stats: {
-    courses: number;
-    units: number;
-    studyHours: number;
-    vocabulary: number;
+    courses: number | string;
+    units: number | string;
+    studyHours: number | string;
+    vocabulary: number | string;
   };
   details: {
     viewTimes: string;
