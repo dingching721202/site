@@ -8,6 +8,9 @@ module.exports = {
   theme: {
     extend: {
       colors: {
+        // Keep Tailwind's default colors and extend them
+        black: '#000000',
+        white: '#ffffff',
         primary: {
           50: '#f0f9ff',
           100: '#e0f2fe',
@@ -23,12 +26,35 @@ module.exports = {
           600: '#7c3aed',
         },
         cyan: {
+          300: '#67e8f9',
           400: '#22d3ee',
           500: '#06b6d4',
         },
         purple: {
           400: '#a855f7',
           500: '#9333ea',
+        },
+        blue: {
+          400: '#60a5fa',
+          500: '#3b82f6',
+        },
+        green: {
+          400: '#4ade80',
+          500: '#22c55e',
+        },
+        orange: {
+          400: '#fb923c',
+          500: '#f97316',
+        },
+        yellow: {
+          400: '#facc15',
+        },
+        pink: {
+          400: '#f472b6',
+          500: '#ec4899',
+        },
+        emerald: {
+          400: '#34d399',
         },
         gray: {
           50: '#f9fafb',
