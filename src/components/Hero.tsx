@@ -5,7 +5,7 @@ const Hero = () => {
     <section className="hero">
       <div className="container">
         <div>
-          <h1 className="hero-title">TLI 華語影音課程</h1>
+          <h1 className="hero-title">TLI Connect</h1>
           <p className="hero-subtitle">專為華語學習者設計的線上互動學習平台</p>
           <p className="hero-description">
             結合教學影片、AI實境對話、單元測驗與真人團班課程，讓您自由安排進度並享受完整的學習體驗。

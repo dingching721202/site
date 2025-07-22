@@ -265,26 +265,32 @@
 
 /* Plan cards */
 .plan-card {
-  background: #111111;
-  border: 1px solid #222222;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
   padding: 40px;
   position: relative;
   transition: all 0.3s ease;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
 }
 
 .plan-card.featured {
-  border-color: #3b82f6;
-  background: linear-gradient(135deg, rgba(59, 130, 246, 0.05) 0%, rgba(29, 78, 216, 0.05) 100%);
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 32px rgba(59, 130, 246, 0.2);
 }
 
 .plan-card:hover {
   transform: translateY(-4px);
-  border-color: #333333;
+  border-color: rgba(59, 130, 246, 0.3);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
 }
 
 .plan-card.featured:hover {
-  border-color: #2563eb;
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 12px 40px rgba(59, 130, 246, 0.3);
 }
 
 .plan-badge {
